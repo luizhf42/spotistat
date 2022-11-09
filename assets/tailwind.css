@@ -2,6 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/Circular.ttf") format("truetype");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/CircularItalic.ttf") format("truetype");
+	font-weight: 400;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/CircularLight.otf") format("opentype");
+	font-weight: 300;
+}
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/CircularLightItalic.otf") format("opentype");
+	font-weight: 300;
+	font-style: italic;
+}
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/CircularBold.otf") format("opentype");
+	font-weight: 700;
+}
+@font-face {
+	font-family: "Circular";
+	src: url("./fonts/CircularBoldItalic.otf") format("opentype");
+	font-weight: 700;
+	font-style: italic;
+}
+
 body,
 #__nuxt {
 	@apply h-screen font-circular;
