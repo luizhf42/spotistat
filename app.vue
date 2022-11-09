@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <h1 @click="requestAuthorization">bora</h1>
-  </div>
+    <!-- <h1 @click="requestAuthorization">bora</h1> -->
+    <LoginScreen />
 </template>
 
 <script setup lang="ts">

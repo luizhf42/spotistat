@@ -4,7 +4,10 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				loginBg: "#00ff00",
+				loginBg: "#000",
+				mainGreen: "#1ed760",
+				mainGreenHover: "#1cb156"
+
 			},
 			fontFamily: {
 				circular: "'Circular', sans-serif",
