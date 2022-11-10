@@ -17,7 +17,7 @@ div {
   @apply h-full w-full bg-loginBg flex flex-col justify-center items-center;
 
   & h1 {
-    @apply text-6xl text-mainGreen text-center mb-8 font-bold;
+    @apply text-5xl sm:text-6xl text-mainGreen text-center mb-8 mx-4 font-bold;
   }
 
   & button {
