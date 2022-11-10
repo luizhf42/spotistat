@@ -6,7 +6,8 @@ module.exports = {
 			colors: {
 				loginBg: "#000",
 				mainGreen: "#1ed760",
-				mainGreenHover: "#1cb156"
+				mainGreenHover: "#1cb656",
+				greenShadow: "#116331",
 
 			},
 			fontFamily: {
