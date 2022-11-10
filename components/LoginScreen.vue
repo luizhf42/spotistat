@@ -21,7 +21,7 @@ div {
   }
 
   & button {
-    @apply p-4 bg-mainGreen font-bold uppercase rounded-full shadow-[0_0_4px_0px] shadow-greenShadow
+    @apply text-lg p-4 bg-mainGreen font-bold uppercase rounded-full shadow-[0_0_4px_0px] shadow-greenShadow
     hover:scale-[1.02] hover:bg-mainGreenHover;
   }
 }
