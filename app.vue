@@ -1,6 +1,5 @@
 <template>
-    <!-- <h1 @click="requestAuthorization">bora</h1> -->
-    <LoginScreen />
+    <LoginScreen @request-authorization="requestAuthorization"/>
 </template>
 
 <script setup lang="ts">

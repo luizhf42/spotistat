@@ -4,12 +4,12 @@
       Check your Spotify listening stats. <br />
       For free.
     </h1>
-    <!-- TODO: emit click event to trigger requestAuthorization function -->
-    <button>Log in and enjoy</button>
+    <button @click="emit('request-authorization')">Log in and enjoy</button>
   </div>
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits(["request-authorization"]);
 </script>
 
 <style lang="postcss" scoped>
