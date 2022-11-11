@@ -17,7 +17,7 @@ const clientId = config.public.clientId;
 const clientSecret = config.public.clientSecret;
 const redirectURI = "http://localhost:3000/";
 const scope =
-  "user-read-playback-state user-follow-read user-read-currently-playing user-read-playback-position user-top-read user-read-recently-played";
+  "user-read-private user-read-playback-state user-follow-read user-read-currently-playing user-read-playback-position user-top-read user-read-recently-played";
 let accessToken: string = "";
 let refreshToken: string = "";
 
