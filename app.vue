@@ -85,13 +85,12 @@ const callAuthorizationApi = async (params: object) => {
   );
 };
 
-function handleAuthorizationResponse({
+const handleAuthorizationResponse = ({
   access_token,
   refresh_token,
-}: TokenResponse) {
+}: TokenResponse) => {
   accessToken = access_token || "";
   refreshToken = refresh_token || "";
-  // checkIfUserIsAuthorized();
-}
+};
 </script>
 
