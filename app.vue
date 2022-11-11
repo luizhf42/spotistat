@@ -91,6 +91,19 @@ const handleAuthorizationResponse = ({
 }: TokenResponse) => {
   accessToken = access_token || "";
   refreshToken = refresh_token || "";
+  getUserProfile();
+};
+
+const getUserProfile = async () => {
+  await $fetch("https://api.spotify.com/v1/me", {
+    method: "GET",
+    headers: {
+      Authorization: "Bearer " + accessToken,
+    },
+  }).then(
+    (response) => console.log(response),
+    (error) => console.error(error)
+  );
 };
 </script>
 
