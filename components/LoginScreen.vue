@@ -14,7 +14,7 @@ const emit = defineEmits(["request-authorization"]);
 
 <style lang="postcss" scoped>
 div {
-  @apply h-full w-full bg-loginBg flex flex-col justify-center items-center;
+  @apply h-full w-full flex flex-col justify-center items-center;
 
   & h1 {
     @apply text-5xl sm:text-6xl text-mainGreen text-center mb-8 mx-4 font-bold;

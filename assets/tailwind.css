@@ -38,5 +38,5 @@
 
 body,
 #__nuxt {
-	@apply h-screen font-circular;
+	@apply h-screen font-circular bg-mainBg;
 }
