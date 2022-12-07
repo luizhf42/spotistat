@@ -1,9 +1,10 @@
 <template>
-  <UserScreen />
+  <UserScreen v-if="userData.profile" />
 </template>
 
 <script setup lang="ts">
 import { useAuthDataStore } from "~/store/auth";
+import { useUserDataStore } from "~/store/user";
 
 interface TokenResponse {
   access_token: string;
@@ -13,15 +14,9 @@ interface TokenResponse {
   token_type: "Bearer";
 }
 
-const authDataStore = useAuthDataStore();
-const {
-  accountURL,
-  clientId,
-  clientSecret,
-  redirectURI,
-  setAccessToken,
-  setRefreshToken,
-} = authDataStore;
+const authData = useAuthDataStore();
+const userData = useUserDataStore();
+const { accountURL, clientId, clientSecret, redirectURI } = authData;
 
 onMounted(() => checkIfUserIsAuthorized());
 
@@ -61,7 +56,7 @@ const requestAccessToken = (code: string) => {
 function refreshAccessToken() {
   const params = {
     grant_type: "refresh_token",
-    refresh_token: authDataStore.refreshToken,
+    refresh_token: authData.refreshToken,
     client_id: clientId,
   };
   callAuthorizationApi(params);
@@ -85,8 +80,8 @@ const handleAuthorizationResponse = ({
   access_token,
   refresh_token,
 }: TokenResponse) => {
-  setAccessToken(access_token || authDataStore.accessToken);
-  setRefreshToken(refresh_token || authDataStore.refreshToken);
+  authData.accessToken = access_token || authData.accessToken;
+  authData.refreshToken = refresh_token || authData.refreshToken;
   getUserProfile();
 };
 
@@ -94,15 +89,17 @@ const getUserProfile = async () => {
   await $fetch("https://api.spotify.com/v1/me", {
     method: "GET",
     headers: {
-      Authorization: "Bearer " + authDataStore.accessToken,
+      Authorization: "Bearer " + authData.accessToken,
     },
   }).then(
     (response) => {
       console.log(response);
+      userData.profile = response;
     },
     (error) => console.error(error)
   );
 };
+
 </script>
 
 <style lang="postcss" scoped>
