@@ -13,12 +13,6 @@ export const useAuthDataStore = defineStore({
 		refreshToken: "",
 	}),
 	actions: {
-		setAccessToken(requestedAccessToken: string) {
-			this.accessToken = requestedAccessToken;
-		},
-		setRefreshToken(requestedRefreshToken: string) {
-			this.refreshToken = requestedRefreshToken;
-		},
 	},
 	getters: {},
 });
