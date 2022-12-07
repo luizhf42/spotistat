@@ -22,11 +22,13 @@ const {
   setAccessToken,
   setRefreshToken,
 } = authDataStore;
+
 onMounted(() => checkIfUserIsAuthorized());
+
 const checkIfUserIsAuthorized = () => {
   if (window.location.search.length) {
     handleRedirect();
-  }
+  } else navigateTo("/");
 };
 
 const handleRedirect = () => {
@@ -83,8 +85,8 @@ const handleAuthorizationResponse = ({
   access_token,
   refresh_token,
 }: TokenResponse) => {
-  setAccessToken(access_token || "");
-  setRefreshToken(refresh_token || "");
+  setAccessToken(access_token || authDataStore.accessToken);
+  setRefreshToken(refresh_token || authDataStore.refreshToken);
   getUserProfile();
 };
 
@@ -104,4 +106,5 @@ const getUserProfile = async () => {
 </script>
 
 <style lang="postcss" scoped>
+
 </style>

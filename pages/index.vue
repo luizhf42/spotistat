@@ -1,7 +1,7 @@
 <template>
-  <!-- <main> -->
+  <main>
   <LoginScreen @request-authorization="requestAuthorization" />
-  <!-- </main> -->
+  </main>
 </template>
 
 <script setup lang="ts">
